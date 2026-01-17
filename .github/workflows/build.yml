@@ -41,4 +41,4 @@ jobs:
           title: "Build"
           files: |
             api/build/libs/VaultAPI.jar
-            api/build/libs/Vault.jar
+            plugin/build/libs/Vault.jar
