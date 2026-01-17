@@ -1,0 +1,25 @@
+{
+  "Group": "Vault",
+  "Name": "Vault",
+  "Version": "1.0.0",
+  "Description": "Vault is an Economy API to allow plugins to more easily hook into this system without needing to hook each individual system themselves.",
+  "Authors": [
+    {
+      "Name": "cereal"
+    },
+    {
+      "Name": "Sleaker"
+    },
+    {
+      "Name": "mung3r"
+    },
+    {
+      "Name": "Redned"
+    }
+  ],
+  "ServerVersion": "*",
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "Main": "me.redned.vault.hytale.Vault",
+  "IncludesAssetPack": true
+}
