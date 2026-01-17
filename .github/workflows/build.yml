@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - "master"
+permissions:
+  contents: write
 jobs:
   build:
-    name: Snapshot Build
+    name: Build
     runs-on: ubuntu-latest
     container:
       image: gradle:9-jdk21
@@ -35,7 +37,7 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: true
+          prerelease: false
           title: "Build"
           files: |
             api/build/libs/VaultAPI.jar
