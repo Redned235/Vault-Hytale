@@ -18,6 +18,16 @@ jobs:
           java-version: '21'
           distribution: 'adopt'
           cache: 'gradle'
+      - name: Fetch Hytale Server
+        env:
+          HYTALE_SERVER_URL: ${{ secrets.HYTALE_SERVER_URL }}
+        run: |
+          set -e
+          mkdir -p libs
+          curl -L "$HYTALE_SERVER_URL" -o hytale.zip
+          unzip -q hytale.zip
+          mv Server/HytaleServer.jar libs/HytaleServer.jar
+          rm -rf Server hytale.zip
       - name: Gradle Build
         run: gradle build --parallel
       - name: Auto Release

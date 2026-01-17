@@ -13,17 +13,13 @@ allprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "com.gradleup.shadow")
 
+    repositories {
+        mavenCentral()
+    }
+
     publishing {
         publications.create<MavenPublication>("library") {
             artifact(tasks.shadowJar)
         }
     }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compileOnly(files("libs/HytaleServer.jar"))
 }
